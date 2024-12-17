@@ -32,6 +32,35 @@ Además, incluye:
 
 Puedes ver a detalle el proyecto directamente desde mi canal de YouTube [https://youtu.be/A6IitV7X-bk?si=ewnpF-ITK-ap6pht](https://youtu.be/A6IitV7X-bk?si=ewnpF-ITK-ap6pht)
 
+## Script de la base de datos
+
+```
+INSERT INTO rol (nombre) VALUES ('ROLE_ADMIN');
+INSERT INTO rol (nombre) VALUES ('ROLE_USER');
+
+INSERT INTO usuario (username, password, estado) VALUES ('admin', '$2a$10$.RiksIT6TUUrb8zJKSkmYuACSWynE1MGeZ8jbW8ww4dEixi9tbPai', true);
+INSERT INTO usuario (username, password, estado) VALUES ('user', '$2a$10$.RiksIT6TUUrb8zJKSkmYuACSWynE1MGeZ8jbW8ww4dEixi9tbPai', true);
+
+INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (1, 1); -- admin -> ROLE_ADMIN
+INSERT INTO usuario_rol (id_usuario, id_rol) VALUES (2, 2); -- user -> ROLE_USER
+
+INSERT INTO ruta (ruta_url) VALUES ('/home.xhtml');
+INSERT INTO ruta (ruta_url) VALUES ('/nosotros.xhtml');
+INSERT INTO ruta (ruta_url) VALUES ('/preguntas.xhtml');
+INSERT INTO ruta (ruta_url) VALUES ('/admin/**');
+INSERT INTO ruta (ruta_url) VALUES ('/operario/**');
+
+INSERT INTO ruta_rol (id_ruta, id_rol) VALUES (1, 1);
+INSERT INTO ruta_rol (id_ruta, id_rol) VALUES (1, 2);
+INSERT INTO ruta_rol (id_ruta, id_rol) VALUES (2, 1);
+INSERT INTO ruta_rol (id_ruta, id_rol) VALUES (3, 1);
+INSERT INTO ruta_rol (id_ruta, id_rol) VALUES (3, 2);
+INSERT INTO ruta_rol (id_ruta, id_rol) VALUES (4, 1);
+INSERT INTO ruta_rol (id_ruta, id_rol) VALUES (5, 2);
+
+```
+
+
 
 ## Cómo ejecutar el proyecto:
 
